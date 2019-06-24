@@ -119,7 +119,7 @@ class TableRow extends React.Component {
             // handle the column data within each row
             let cells = head.map(function(colData,i) {
 
-                return <td key={i} >{item[head[i]]}</td>;
+                return <td key={i} className={item["blue"]}>{item[head[i]]}</td>;
 
             });
             return <tr key={i}>{cells}</tr>;
@@ -150,10 +150,12 @@ class Table extends React.Component {
     render() {
         return (
             <div>
+                <div class="scrollbar" id="style-7">
                 <table>
                     <TableHeader data={this.props.data} head={this.props.head} />
                     <TableRow data={query(this.props.data, this.state.startIndex, this.state.endIndex)} head={this.props.head} />
                 </table>
+                </div>
                 <Pagination
                     pageSize={this.props.pageSize}
                     countItems={this.props.data.length}
