@@ -150,10 +150,12 @@ class Table extends React.Component {
     render() {
         return (
             <div>
+                <div class="scrollbar" id="style-7">
                 <table>
                     <TableHeader data={this.props.data} head={this.props.head} />
                     <TableRow data={query(this.props.data, this.state.startIndex, this.state.endIndex)} head={this.props.head} />
                 </table>
+                </div>
                 <Pagination
                     pageSize={this.props.pageSize}
                     countItems={this.props.data.length}

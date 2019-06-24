@@ -3,7 +3,7 @@ import React from 'react';
 export default () => (
     <style jsx="true">{`
 * {
-    background-repeat: no-repeat;
+    background-size: cover;
     font-family: "Avenir", Helvetica, Arial, sans-serif;
 
 }

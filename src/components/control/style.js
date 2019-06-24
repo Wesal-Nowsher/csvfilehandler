@@ -3,7 +3,7 @@ import React from 'react';
 export default () => (
     <style jsx="true">{`
 * {
-    background-repeat: no-repeat;
+    background-size: cover;
     font-family: "Avenir", Helvetica, Arial, sans-serif;
 
 }
@@ -32,8 +32,50 @@ color:red;
     will-change: padding-left,padding-right;
 
 }
-body{
-overflow-x:hidden;
+.search-col{
+    display:flex;
+}
+.search-col input{
+    border: 1px solid;
+    padding: 5px 10px;
+    border-radius: 10px;
+    outline: none;
+    width: 50%;
+}
+.scrollbar
+{
+	background: #F5F5F5;
+	overflow-x: auto;
+	margin-bottom: 25px;
+}
+#style-7::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-7::-webkit-scrollbar
+{
+	background-color: #F5F5F5;
+}
+
+#style-7::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   right top,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+.per-page-col{
+    display:flex;
+    justify-content:flex-end;
+}
+.table-header{
+    margin-bottom:10px;
 }
 .dataTables_wrapper{
     background:transparent;
