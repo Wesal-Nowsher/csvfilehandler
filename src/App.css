@@ -1,33 +1,45 @@
-.App {
-  text-align: center;
+.App{
+
+  background-image: url("./Assets/backgournd.png");
+
+}
+body{
+
+}
+.loader {
+  border: 16px solid rgb(151, 2, 10);
+  border-radius: 50%;
+  border-top: 16px solid #186C66;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin-left:45%;
+  margin-top: 10%;
+  position: relative;
+}
+.percent{
+  position: absolute;
+  left: 0;
+  top: 0%;
+  right:0;
+  bottom:0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.App-link {
-  color: #61dafb;
+.dataTables_wrapper {
+  background: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+  background-image: url("./Assets/backgournd.png");
 }
