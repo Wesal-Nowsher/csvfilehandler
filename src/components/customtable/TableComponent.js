@@ -119,7 +119,7 @@ class TableRow extends React.Component {
             // handle the column data within each row
             let cells = head.map(function(colData,i) {
 
-                return <td key={i} className={item["blue"]==="red"? "redcolor": ""}>{item[head[i]]}</td>;
+                return <td key={i} >{item[head[i]]}</td>;
 
             });
             return <tr key={i}>{cells}</tr>;

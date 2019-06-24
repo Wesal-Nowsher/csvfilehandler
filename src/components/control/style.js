@@ -7,10 +7,10 @@ export default () => (
     font-family: "Avenir", Helvetica, Arial, sans-serif;
 
 }
-.redcolor{
+.red{
 color:red;
 }
-.greencolor{
+.green{
     color:green;
 }
 .starter-head{

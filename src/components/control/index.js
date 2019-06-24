@@ -19,24 +19,21 @@ class control extends Component{
         width:0,
         headers:[],
         activePage: 15,
-        itemonpage:20
+        itemonpage:20,
+        alldatain:[]
     }
 
-    handlePageChange(pageNumber) {
-        console.log(`active page is ${pageNumber}`);
-        this.setState({activePage: pageNumber});
-    }
+
 
 
     componentDidMount(){
         if(this.props.data.length > 0){
-            this.setState({loading:true, filechoosen: false});
+            this.setState({loading:true, filechoosen: false,});
             let {data}= this.props;
             let self= this;
 
             setTimeout(function () {
                 let newdata=[...data];
-
                 let strc=[];
                 let nw={};
                 let headers=[...newdata[0]];
@@ -55,7 +52,6 @@ class control extends Component{
                     let handicap=[];
                     let faceaface=[];
                     let handicapfaceaface=[];
-
                     let plusmoins=[];
                     strc.map((item, index)=>{
                         if(index >0){
@@ -114,6 +110,7 @@ class control extends Component{
                     let winner="";
                     let aswholewinner="";
                     let minimumion;
+                    console.log("1 n2 length",onentwo);
                     while(ioneindex <= onentwo.length-4){
 
                         // minone
@@ -421,7 +418,7 @@ class control extends Component{
                     "pageinations",strc.length
                 )
 
-                self.setState({data: strc,loading:false });
+                self.setState({data: strc,alldatain:strc,loading:false });
             },1000);
         }
 
@@ -431,7 +428,26 @@ class control extends Component{
         this.setState({itemonpage:value});
     }
     search(value){
-        console.log("searchfield",value);
+        let {data,alldatain}=this.state;
+     if(value !== ""){
+
+         let results=[];
+
+         for(var i=0; i<alldatain.length; i++) {
+                 if(alldatain[i]["Pari"].toString().toLowerCase().indexOf(value)!=-1) {
+                     results.push(alldatain[i]);
+                 }
+         }
+         this.setState({data:results});
+         console.log("data",data);
+         console.log("rsults",results,alldatain);
+         console.log("vakl",value);
+         results=[];
+     }
+     else{
+         console.log("looseall",alldatain);
+         this.setState({data:alldatain});
+     }
     }
 
      render(){
