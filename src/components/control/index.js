@@ -19,7 +19,7 @@ class control extends Component{
         width:0,
         headers:[],
         activePage: 15,
-        itemonpage:5
+        itemonpage:20
     }
 
     handlePageChange(pageNumber) {
@@ -433,9 +433,6 @@ class control extends Component{
     search(value){
         console.log("searchfield",value);
     }
-    HiItems(items) {
-        console.log(items)
-    }
 
      render(){
 
@@ -474,15 +471,9 @@ class control extends Component{
                                 }
                                 {
                                     data.length>0 && this.state.loading===false && <div>
-                                        {/*<input type="text" placeholder="Search" onChange={(e)=> this.search(e.target.value)}/>*/}
-                                        {/*<Search items={items}*/}
-                                                {/*placeholder='Pick your language'*/}
-                                                {/*maxSelected={3}*/}
-                                                {/*multiple={true}*/}
-                                                {/*onItemsChanged={this.HiItems.bind(this)} />*/}
+                                        <input type="text" placeholder="Search" onChange={(e)=> this.search(e.target.value)}/>
+
                                         <label>item per page</label><select onChange={(e)=> this.nitems(e.target.value)}>
-                                            <option value="5">5</option>
-                                            <option value="10">10</option>
                                             <option value="20">20</option>
                                             <option value="40">40</option>
                                         </select>
